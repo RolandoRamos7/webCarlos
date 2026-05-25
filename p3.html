@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Candidatos a Intendente Municipal</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Interfaz Elecciones</title>
 
 <style>
 
@@ -15,215 +16,208 @@
 }
 
 body{
-    background:#2d2d2d;
-    padding:10px;
+    background:#2b2b2b;
+    overflow:hidden;
 }
 
-/* =========================
-   CONTENEDOR
-========================= */
-
-.contenedor{
+/* PANTALLA */
+.pantalla{
     width:100%;
-    max-width:1100px;
-    margin:auto;
-    background:#d9d9d9;
-    border:2px solid #bdbdbd;
-}
+    height:100vh;
 
-/* =========================
-   HEADER SUPERIOR
-========================= */
-
-.info-top{
-    background:#555;
-    color:#fff;
-    padding:6px 10px;
-    font-size:12px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:10px;
-}
-
-.topbar{
-    background:#000;
-    color:white;
-    padding:12px;
-    text-align:center;
-    font-weight:bold;
-    font-size:28px;
-}
-
-/* =========================
-   GRID
-========================= */
-
-.grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:6px;
-    padding:6px;
-}
-
-/* =========================
-   CARDS
-========================= */
-
-.card{
-    background:#efefef;
-    border:1px solid #cfcfcf;
-    min-height:280px;
-    padding:20px;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    transition:0.3s;
-    cursor:pointer;
-}
-
-.card:hover{
-    background:#e6e6e6;
-}
-
-.partido{
-    text-align:center;
-    font-size:clamp(20px, 2vw, 34px);
-    font-weight:bold;
-    margin-bottom:20px;
-}
-
-.contenido{
     display:flex;
     justify-content:center;
     align-items:center;
-    gap:35px;
-    flex-wrap:wrap;
+
+    overflow:hidden;
 }
 
-.foto img{
-    width:140px;
-    height:160px;
-    object-fit:cover;
+/* TABLERO */
+.tablero{
+
+    width:100vw;
+
+    max-width:100%;
+
+    background:#dcdcdc;
+
+    border:2px solid #8a8a8a;
+
+    transform:scale(1);
+
+    transform-origin:center;
 }
 
-.lista{
+/* BARRA SUPERIOR */
+.superior{
+
+    background:#5a5a5a;
+
+    color:white;
+
+    font-size:11px;
+
+    padding:5px 10px;
+
     text-align:center;
-}
 
-.lista h2{
-    font-size:clamp(20px, 2vw, 30px);
-}
-
-.numero{
-    font-size:clamp(60px, 6vw, 90px);
     font-weight:bold;
+}
+
+/* GRID */
+.grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:4px;
+
+    padding:4px;
+}
+
+/* CARD */
+.card{
+
+    background:#efefef;
+
+    border:1px solid #bdbdbd;
+
+    min-height:240px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:15px;
+}
+
+/* TITULO */
+.titulo{
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    margin-bottom:18px;
+}
+
+/* IMAGEN */
+.card img{
+
+    width:85px;
+
+    height:85px;
+
+    object-fit:cover;
+
+    margin-bottom:10px;
+}
+
+/* LISTA */
+.lista{
+
+    font-size:55px;
+
+    font-weight:bold;
+
     line-height:1;
 }
 
 .sigla{
-    font-size:clamp(18px, 2vw, 28px);
-    margin-top:5px;
+
+    font-size:22px;
+
+    margin-bottom:10px;
 }
 
+/* NOMBRE */
 .nombre{
-    text-align:center;
-    margin-top:20px;
-    font-size:clamp(22px, 2vw, 34px);
+
+    font-size:20px;
 }
 
+/* VOTO EN BLANCO */
 .blanco{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:clamp(28px, 3vw, 48px);
+
+    font-size:38px;
+
     font-weight:bold;
-    text-align:center;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* RESPONSIVE CELULAR */
+@media(max-width:768px){
 
-.footer{
-    background:#cfcfcf;
-    padding:12px;
-    display:flex;
-    align-items:center;
-    gap:15px;
-    flex-wrap:wrap;
-}
+    .pantalla{
 
-.footer-btn{
-    background:#9b9b9b;
-    padding:10px 18px;
-    border-radius:4px;
-    font-weight:bold;
-    color:#fff;
-}
+        justify-content:center;
 
-/* =========================
-   TABLET
-========================= */
-
-@media(max-width:900px){
-
-    .topbar{
-        font-size:22px;
+        align-items:center;
     }
 
-    .grid{
-        grid-template-columns:1fr;
+    .tablero{
+
+        width:100vw;
+
+        transform:scale(1);
     }
 
     .card{
-        min-height:auto;
-    }
 
-}
+        min-height:180px;
 
-/* =========================
-   CELULAR
-========================= */
-
-@media(max-width:600px){
-
-    body{
-        padding:5px;
-    }
-
-    .info-top{
-        font-size:10px;
-        justify-content:center;
-        text-align:center;
-    }
-
-    .topbar{
-        font-size:18px;
         padding:10px;
     }
 
-    .card{
-        padding:15px;
+    .titulo{
+
+        font-size:14px;
+
+        margin-bottom:10px;
     }
 
-    .contenido{
-        flex-direction:column;
-        gap:15px;
+    .card img{
+
+        width:55px;
+
+        height:55px;
+
+        margin-bottom:6px;
     }
 
-    .foto img{
-        width:110px;
-        height:130px;
+    .lista{
+
+        font-size:38px;
+    }
+
+    .sigla{
+
+        font-size:15px;
+
+        margin-bottom:6px;
     }
 
     .nombre{
-        margin-top:10px;
+
+        font-size:15px;
     }
 
-    .footer{
-        justify-content:center;
+    .blanco{
+
+        font-size:24px;
+    }
+
+    .superior{
+
+        font-size:8px;
+
+        padding:4px;
     }
 
 }
@@ -233,113 +227,90 @@ body{
 
 <body>
 
-<div class="contenedor">
+<div class="pantalla">
 
-    <!-- BARRA SUPERIOR -->
-    <div class="info-top">
-        <div>Elección: ASOCIACION NACIONAL REPUBLICANA</div>
-        <div>Distrito: 1-AYOLAS</div>
-    </div>
+    <div class="tablero">
 
-    <!-- TITULO -->
-    <div class="topbar">
-        Candidatos a INTENDENTE MUNICIPAL
-    </div>
+        <div class="superior">
+            Candidatos a INTENDENTE MUNICIPAL
+        </div>
 
-    <!-- GRID -->
-    <div class="grid">
+        <div class="grid">
 
         <!-- CARD 1 -->
-        <div class="card" onclick="window.location.href='p4.html'">
+<div class="card" onclick="window.location.href='p4.html'">
 
-            <div class="partido">
-                HONOR COLORADO
-            </div>
-
-            <div class="contenido">
-
-                <div class="foto">
-                    <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3878.25858.webp">
-                </div>
-
-                <div class="lista">
-                    <h2>LISTA</h2>
-                    <div class="numero">2</div>
-                    <div class="sigla">MHC</div>
-                </div>
-
-            </div>
-
-            <div class="nombre">
-                Christian Rolon
-            </div>
-
-        </div>
-
-        <!-- CARD 2 -->
-        <div class="card">
-
-            <div class="partido">
-                FUERZA REPUBLICANA
-            </div>
-
-            <div class="contenido">
-
-                <div class="foto">
-                    <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3879.25859.webp">
-                </div>
-
-                <div class="lista">
-                    <h2>LISTA</h2>
-                    <div class="numero">4</div>
-                    <div class="sigla">MFR</div>
-                </div>
-
-            </div>
-
-            <div class="nombre">
-                Gabriel Alfonzo
-            </div>
-
-        </div>
-
-        <!-- CARD 3 -->
-        <div class="card">
-
-            <div class="partido">
-                COLORADO AÑETETE
-            </div>
-
-            <div class="contenido">
-
-                <div class="foto">
-                    <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3880.25860.webp">
-                </div>
-
-                <div class="lista">
-                    <h2>LISTA</h2>
-                    <div class="numero">6</div>
-                    <div class="sigla">MCA</div>
-                </div>
-
-            </div>
-
-            <div class="nombre">
-                Capitán Mutti
-            </div>
-
-        </div>
-
-        <!-- CARD 4 -->
-        <div class="card blanco">
-            VOTO EN BLANCO
-        </div>
-
+    <div class="titulo">
+        HONOR COLORADO
     </div>
 
-    <!-- FOOTER -->
-    <div class="footer">
-        <div class="footer-btn">Vista alto contraste</div>
+    <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3878.25858.webp" alt="">
+
+    <div class="lista">2</div>
+
+    <div class="sigla">
+        MHC
+    </div>
+
+    <div class="nombre">
+        Christian Rolon
+    </div>
+
+</div>
+
+<!-- CARD 2 -->
+<div class="card" onclick="window.location.href='p4.html'">
+
+    <div class="titulo">
+        FUERZA REPUBLICANA
+    </div>
+
+    <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3879.25859.webp" alt="">
+
+    <div class="lista">4</div>
+
+    <div class="sigla">
+        MFR
+    </div>
+
+    <div class="nombre">
+        Gabriel Alfonzo
+    </div>
+
+</div>
+
+<!-- CARD 3 -->
+<div class="card" onclick="window.location.href='p4.html'">
+
+    <div class="titulo">
+        COLORADO AÑETETE
+    </div>
+
+    <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3880.25860.webp" alt="">
+
+    <div class="lista">6</div>
+
+    <div class="sigla">
+        MCA
+    </div>
+
+    <div class="nombre">
+        Capitán Mutti
+    </div>
+
+</div>
+
+<!-- CARD 4 -->
+<div class="card" onclick="window.location.href='p4.html'">
+
+    <div class="blanco">
+        VOTO EN BLANCO
+    </div>
+
+</div>
+
+        </div>
+
     </div>
 
 </div>
