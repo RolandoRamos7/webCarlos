@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Candidatos a Intendente Municipal</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#2d2d2d;
+    padding:10px;
+}
+
+/* =========================
+   CONTENEDOR
+========================= */
+
+.contenedor{
+    width:100%;
+    max-width:1100px;
+    margin:auto;
+    background:#d9d9d9;
+    border:2px solid #bdbdbd;
+}
+
+/* =========================
+   HEADER SUPERIOR
+========================= */
+
+.info-top{
+    background:#555;
+    color:#fff;
+    padding:6px 10px;
+    font-size:12px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.topbar{
+    background:#000;
+    color:white;
+    padding:12px;
+    text-align:center;
+    font-weight:bold;
+    font-size:28px;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:6px;
+    padding:6px;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+    background:#efefef;
+    border:1px solid #cfcfcf;
+    min-height:280px;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    transition:0.3s;
+    cursor:pointer;
+}
+
+.card:hover{
+    background:#e6e6e6;
+}
+
+.partido{
+    text-align:center;
+    font-size:clamp(20px, 2vw, 34px);
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.contenido{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:35px;
+    flex-wrap:wrap;
+}
+
+.foto img{
+    width:140px;
+    height:160px;
+    object-fit:cover;
+}
+
+.lista{
+    text-align:center;
+}
+
+.lista h2{
+    font-size:clamp(20px, 2vw, 30px);
+}
+
+.numero{
+    font-size:clamp(60px, 6vw, 90px);
+    font-weight:bold;
+    line-height:1;
+}
+
+.sigla{
+    font-size:clamp(18px, 2vw, 28px);
+    margin-top:5px;
+}
+
+.nombre{
+    text-align:center;
+    margin-top:20px;
+    font-size:clamp(22px, 2vw, 34px);
+}
+
+.blanco{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:clamp(28px, 3vw, 48px);
+    font-weight:bold;
+    text-align:center;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    background:#cfcfcf;
+    padding:12px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.footer-btn{
+    background:#9b9b9b;
+    padding:10px 18px;
+    border-radius:4px;
+    font-weight:bold;
+    color:#fff;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:900px){
+
+    .topbar{
+        font-size:22px;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .card{
+        min-height:auto;
+    }
+
+}
+
+/* =========================
+   CELULAR
+========================= */
+
+@media(max-width:600px){
+
+    body{
+        padding:5px;
+    }
+
+    .info-top{
+        font-size:10px;
+        justify-content:center;
+        text-align:center;
+    }
+
+    .topbar{
+        font-size:18px;
+        padding:10px;
+    }
+
+    .card{
+        padding:15px;
+    }
+
+    .contenido{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .foto img{
+        width:110px;
+        height:130px;
+    }
+
+    .nombre{
+        margin-top:10px;
+    }
+
+    .footer{
+        justify-content:center;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <!-- BARRA SUPERIOR -->
+    <div class="info-top">
+        <div>Elección: ASOCIACION NACIONAL REPUBLICANA</div>
+        <div>Distrito: 1-AYOLAS</div>
+    </div>
+
+    <!-- TITULO -->
+    <div class="topbar">
+        Candidatos a INTENDENTE MUNICIPAL
+    </div>
+
+    <!-- GRID -->
+    <div class="grid">
+
+        <!-- CARD 1 -->
+        <div class="card" onclick="window.location.href='p4.html'">
+
+            <div class="partido">
+                HONOR COLORADO
+            </div>
+
+            <div class="contenido">
+
+                <div class="foto">
+                    <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3878.25858.webp">
+                </div>
+
+                <div class="lista">
+                    <h2>LISTA</h2>
+                    <div class="numero">2</div>
+                    <div class="sigla">MHC</div>
+                </div>
+
+            </div>
+
+            <div class="nombre">
+                Christian Rolon
+            </div>
+
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="card">
+
+            <div class="partido">
+                FUERZA REPUBLICANA
+            </div>
+
+            <div class="contenido">
+
+                <div class="foto">
+                    <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3879.25859.webp">
+                </div>
+
+                <div class="lista">
+                    <h2>LISTA</h2>
+                    <div class="numero">4</div>
+                    <div class="sigla">MFR</div>
+                </div>
+
+            </div>
+
+            <div class="nombre">
+                Gabriel Alfonzo
+            </div>
+
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="card">
+
+            <div class="partido">
+                COLORADO AÑETETE
+            </div>
+
+            <div class="contenido">
+
+                <div class="foto">
+                    <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3880.25860.webp">
+                </div>
+
+                <div class="lista">
+                    <h2>LISTA</h2>
+                    <div class="numero">6</div>
+                    <div class="sigla">MCA</div>
+                </div>
+
+            </div>
+
+            <div class="nombre">
+                Capitán Mutti
+            </div>
+
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="card blanco">
+            VOTO EN BLANCO
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="footer-btn">Vista alto contraste</div>
+    </div>
+
+</div>
+
+</body>
+</html>
