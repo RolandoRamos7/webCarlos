@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Opciones Seleccionadas</title>
+
 <style>
 
 *{
@@ -13,168 +15,129 @@
     font-family:Arial, Helvetica, sans-serif;
 }
 
-html,body{
-    width:100%;
-    overflow-x:hidden;
-}
-
 body{
-    background:#2d2d2d;
-    padding:20px;
-}
-
-/* =========================
-   CONTENEDOR
-========================= */
-
-.contenedor{
-    width:100%;
-    max-width:1100px;
-    margin:auto;
-    background:#d9d9d9;
-    border:2px solid #bdbdbd;
-}
-
-/* =========================
-   TOPBAR
-========================= */
-
-.topbar{
-    background:#5d5d5d;
-    color:#fff;
-    padding:8px 15px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:10px;
-    flex-wrap:wrap;
-    font-size:13px;
-}
-
-.topbar h2{
-    font-size:20px;
-    font-weight:bold;
-    text-align:center;
-}
-
-/* =========================
-   MAIN GRID
-========================= */
-
-.main{
-    display:grid;
-    grid-template-columns:1fr 1fr 130px;
-    gap:4px;
-    padding:4px;
-}
-
-/* =========================
-   CARD
-========================= */
-
-.card{
-    background:#efefef;
-    border:2px solid #d0d0d0;
-    padding:15px;
-    text-align:center;
-    min-height:550px;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-}
-
-.card-title{
-    font-size:28px;
-    font-weight:bold;
-    border-bottom:2px solid #bdbdbd;
-    padding-bottom:10px;
-    margin-bottom:20px;
-}
-
-.party{
-    font-size:34px;
-    font-weight:bold;
-    margin-bottom:35px;
-}
-
-.lista{
-    font-size:32px;
-    font-weight:bold;
-    margin-bottom:25px;
-}
-
-/* =========================
-   FOTO
-========================= */
-
-.photo{
-    width:160px;
-    height:160px;
-    margin:0 auto 25px;
+    background:#2b2b2b;
     overflow:hidden;
 }
 
-.photo img{
+/* PANTALLA */
+.pantalla{
     width:100%;
-    height:100%;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* TABLERO */
+.tablero{
+    width:100vw;
+    background:#dcdcdc;
+    border:2px solid #8a8a8a;
+}
+
+/* BARRA SUPERIOR */
+.superior{
+    background:#5a5a5a;
+    color:white;
+    text-align:center;
+    font-size:10px;
+    font-weight:bold;
+    padding:5px;
+}
+
+/* CONTENIDO */
+.contenido{
+    display:grid;
+    grid-template-columns:1fr 1fr 100px;
+    gap:3px;
+    padding:3px;
+}
+
+/* TARJETAS */
+.card{
+    background:#efefef;
+    border:1px solid #c5c5c5;
+    text-align:center;
+    padding:10px;
+    min-height:320px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+/* TITULOS */
+.titulo{
+    font-size:18px;
+    font-weight:bold;
+    border-bottom:1px solid #999;
+    padding-bottom:5px;
+}
+
+.partido{
+    font-size:22px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.lista{
+    font-size:26px;
+    font-weight:bold;
+    margin-top:20px;
+}
+
+/* IMAGEN */
+.card img{
+    width:90px;
+    height:90px;
     object-fit:cover;
+    margin:auto;
 }
 
-/* =========================
-   TEXTOS
-========================= */
-
-.name{
-    font-size:34px;
+/* NOMBRE */
+.nombre{
+    font-size:20px;
     font-weight:bold;
-    margin-bottom:8px;
 }
 
-.option{
-    font-size:28px;
-    margin-bottom:35px;
+.opcion{
+    font-size:18px;
 }
 
-/* =========================
-   BOTÓN
-========================= */
-
-.btn-modificar{
-    background:#5f6364;
-    color:#fff;
-    font-size:24px;
+/* BOTON */
+.boton{
+    background:#5b5b5b;
+    color:white;
+    text-decoration:none;
+    padding:10px;
+    border-radius:4px;
+    width:120px;
+    margin:auto;
     font-weight:bold;
-    border:none;
-    padding:14px 35px;
-    border-radius:5px;
-    cursor:pointer;
-    transition:0.3s;
 }
 
-.btn-modificar:hover{
-    background:#474b4c;
-}
-
-/* =========================
-   BOTONES LATERALES
-========================= */
-
+/* BOTONES LATERALES */
 .side-buttons{
     display:flex;
     flex-direction:column;
-    gap:4px;
+    gap:3px;
 }
 
 .side-btn{
     flex:1;
+
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
+
     color:#fff;
     text-align:center;
     font-weight:bold;
-    padding:20px 10px;
+
+    padding:10px 5px;
 }
 
 .orange{
@@ -185,93 +148,75 @@ body{
     background:#00b100;
 }
 
+/* ICONOS RESPONSIVE */
 .icon{
-    font-size:70px;
-    margin-bottom:15px;
+    font-size:clamp(28px, 6vw, 70px);
+    margin-bottom:10px;
+    line-height:1;
 }
 
+/* TEXTO RESPONSIVE */
 .side-text{
-    font-size:20px;
+    font-size:clamp(10px, 2vw, 20px);
     line-height:1.1;
 }
 
-/* =========================
-   TABLET
-========================= */
+/* RESPONSIVE */
+@media(max-width:768px){
 
-@media(max-width:900px){
-
-    .main{
-        grid-template-columns:1fr;
-    }
-
-    .side-buttons{
-        flex-direction:row;
-        height:auto;
+    .contenido{
+        grid-template-columns:1fr 1fr 70px;
     }
 
     .card{
-        min-height:auto;
+        min-height:220px;
+        padding:6px;
     }
 
-}
-
-/* =========================
-   CELULAR
-========================= */
-
-@media(max-width:600px){
-
-    body{
-        padding:5px;
+    .titulo{
+        font-size:11px;
     }
 
-    .topbar{
-        flex-direction:column;
-        text-align:center;
-    }
-
-    .card-title{
-        font-size:22px;
-    }
-
-    .party{
-        font-size:26px;
+    .partido{
+        font-size:14px;
     }
 
     .lista{
-        font-size:24px;
+        font-size:16px;
     }
 
-    .name{
-        font-size:26px;
+    .card img{
+        width:55px;
+        height:55px;
     }
 
-    .option{
-        font-size:22px;
+    .nombre{
+        font-size:10px;
     }
 
-    .photo{
-        width:120px;
-        height:120px;
+    .opcion{
+        font-size:8px;
     }
 
-    .btn-modificar{
-        width:100%;
-        font-size:18px;
-        padding:14px;
+    .boton{
+        width:80px;
+        padding:6px;
+        font-size:10px;
     }
 
-    .side-buttons{
-        flex-direction:column;
+    .superior{
+        font-size:7px;
+        padding:3px;
     }
 
+    /* MÁS PEQUEÑO EN CELULAR */
     .icon{
-        font-size:50px;
+        font-size:32px;
+        margin-bottom:6px;
     }
 
     .side-text{
-        font-size:18px;
+        font-size:9px;
     }
 
 }
@@ -281,83 +226,98 @@ body{
 
 <body>
 
-<div class="container">
+<div class="pantalla">
 
-    <div class="topbar">
-        <div>Elección: ASOCIACION NACIONAL REPUBLICANA</div>
-        <h2>Opciones seleccionadas</h2>
-        <div>Distrito: 1-AYOLAS</div>
-    </div>
+    <div class="tablero">
 
-    <div class="main">
+        <div class="superior">
+            Opciones seleccionadas
+        </div>
 
-        <!-- INTENDENTE -->
-        <div class="card">
+        <div class="contenido">
 
-            <div>
-                <div class="card-title">INTENDENTE MUNICIPAL</div>
+            <!-- INTENDENTE -->
+            <div class="card">
 
-                <div class="party">HONOR COLORADO</div>
-
-                <div class="lista">LISTA 2</div>
-
-                <div class="photo">
-                    <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3878.25858.webp" alt="">
+                <div class="titulo">
+                    INTENDENTE MUNICIPAL
                 </div>
 
-                <div class="name">Christian Rolon</div>
+                <div class="partido">
+                    HONOR COLORADO
+                </div>
+
+                <div class="lista">
+                    LISTA 2
+                </div>
+
+                <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3878.25858.webp" alt="">
+
+                <div class="nombre">
+                    Christian Rolon
+                </div>
+
+                <a href="p3.html" class="boton">
+                    Modificar
+                </a>
+
             </div>
 
-            <div>
-                <button class="btn-modificar"onclick="window.location.href='p3.html'">Modificar</button>
+            <!-- JUNTA -->
+            <div class="card">
+
+                <div class="titulo">
+                    JUNTA MUNICIPAL
+                </div>
+
+                <div class="partido">
+                    HONOR COLORADO A
+                </div>
+
+                <div class="lista">
+                    LISTA 2A
+                </div>
+
+                <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3881.25871.webp" alt="">
+
+                <div>
+
+                    <div class="nombre">
+                         Carlos Arrua
+                    </div>
+
+                    <div class="opcion">
+                        Opción 11
+                    </div>
+
+                </div>
+
+                <a href="p5.html" class="boton">
+                    Modificar
+                </a>
+
+            </div>
+
+            <!-- BOTONES LATERALES -->
+            <div class="side-buttons">
+
+                <div class="side-btn orange" onclick="window.location.href='p3.html'">
+                    <div class="icon">↻</div>
+                    <div class="side-text">
+                        Reiniciar<br>Selección
+                    </div>
+                </div>
+
+                <div class="side-btn green" onclick="window.location.href='p7.html'">
+                    <div class="icon">🖨</div>
+                    <div class="side-text">
+                        Imprimir<br>Selección
+                    </div>
+                </div>
+
             </div>
 
         </div>
-
-        <!-- JUNTA -->
-        <div class="card">
-
-            <div>
-                <div class="card-title">JUNTA MUNICIPAL</div>
-
-                <div class="party">HONOR COLORADO A</div>
-
-                <div class="lista">LISTA 2A</div>
-
-                <div class="photo">
-                    <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3881.25871.webp"  alt="">
-                </div>
-
-                <div class="name">Carlos Arrua</div>
-
-                <div class="option">Opción 11</div>
-            </div>
-
-            <div>
-                <button class="btn-modificar" onclick="window.location.href='p5.html'">Modificar</button>
-            </div>
-
-        </div>
-
-        <!-- BOTONES LATERALES -->
-        <div class="side-buttons">
-
-            <div class="side-btn orange" onclick="window.location.href='p3.html'">
-                <div class="icon">↻</div>
-                <div class="side-text">
-                    Reiniciar<br>Seleccion
-                </div>
-            </div>
-
-            <div class="side-btn green" onclick="window.location.href='p7.html'">
-                <div class="icon">🖨</div>
-                <div class="side-text">
-                    Imprimir<br>Seleccion
-                </div>
-            </div>
-
-        </div>
-
     </div>
 
 </div>
